@@ -14,4 +14,4 @@ else
   exit 1;
 fi
 
-sudo /home/sam/PycharmProjects/sudome/venv/bin/python "$@"
+sudo $(which python) "$@"
