@@ -2,7 +2,6 @@ import os
 
 
 def sudome():
-    print("hit")
     return os.getuid()
 
 
