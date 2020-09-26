@@ -1,17 +1,23 @@
 #!/bin/bash
 
+echo "INFO  - Running $0 from ($(pwd))"
+
 if [ -f "__init__.py" ]; then
-  # pytest runs from the `test` directory.
+  # pytest runs from the `test` directory. Check for module declaration.
+  RUNTYPE="Test"
   source  ../venv/bin/activate
-  echo "INFO - Entered venv for test. ($(which python))"
 elif [ -f "python-sudo.sh" ]; then
   # Live runs execute from project root, which MUST contain `python-sudo.sh`
+  RUNTYPE="Live"
   source ./venv/bin/activate
-  echo "INFO - Entered venv for live run. ($(which python))"
-else
-  # Catch an edge case
-  echo "ERROR - Did not enter venv. Check file locations."
-  exit 1;
 fi
 
-sudo $(which python) "$@"
+# Confirm that `python` is from the virtual environment
+if [[ "$(which python)" = *"/venv/bin/"* ]]; then
+  echo "INFO  - Entered venv for $RUNTYPE run. ($(which python))."
+  sudo $(which python) "$@" # Run as root
+else
+  echo "ERROR - Script could not source the virtual environment."
+  echo "      - Found ($(which python)) instead."
+  exit 1
+fi
