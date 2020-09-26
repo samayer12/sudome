@@ -1,6 +1,6 @@
 ## sudome
 A proof-of-concept for PyCharm projects that must run with elevated permissions on Linux.
-`python-sudo.sh` executes the project with elevated permissions and does basic error-checking.
+`python-sudo.sh` sources the virtual environment and then executes the project with elevated permissions.
 `setup.sh` places the appropriate entry in `/etc/sudoers.d/python`.
 The user must enter their `sudo` credentials during `setup.sh`.
 
