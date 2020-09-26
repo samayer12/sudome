@@ -34,6 +34,7 @@ ProjectRoot/
   |- src/
   |- test/
   |- python-sudo.sh
+  |- requirements.txt
   \- setup.sh
 ```
 
