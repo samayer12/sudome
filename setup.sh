@@ -1,6 +1,6 @@
 # Generate config line to execute virtualenv from Pycharm.
 echo "INFO  - Generate configuration line:"
-# echo "$(whoami) $(hostname) = (root) NOPASSWD: $(which python)" | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/python
+echo "$(whoami) $(hostname) = (root) NOPASSWD: $(which python)" | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/python
 
 echo "INFO  - File contents: /etc/sudoers.d/python"
 sudo cat /etc/sudoers.d/python
