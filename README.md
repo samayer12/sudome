@@ -20,7 +20,7 @@ The user must enter their `sudo` credentials during `setup.sh`.
     user host = (root) NOPASSWD: /usr/bin/python
     File contents: /etc/sudoers.d/python
     user host = (root) NOPASSWD: /usr/bin/python
-```
+    ```
 
 1. Add `python` as a venv project interpreter in PyCharm.
 
